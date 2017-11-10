@@ -1,0 +1,46 @@
+body{
+	font-family: 'Pontano Sans', sans-serif;
+	text-align: center;
+}
+h1{
+	font-family: 'Satisfy', cursive;
+	padding-top: 2em;	
+	color: white;
+	text-shadow: 2px 2px 2px black;
+	font-size: 3em; 
+}
+
+h3{
+	padding-bottom: 3em;
+	color: white;
+	text-shadow: 2px 2px 2px black;
+}
+
+.headerFonts {
+	line-height: 1em;
+	border: none;
+}
+.header{
+	background: url('https://i.imgur.com/1hQkfU9.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+    width: 100%;
+
+}
+button {
+	background-color: lightgray;
+	padding: 1em;
+	border-radius: 6px;
+	border: none;
+	text-transform: uppercase;
+}
+input {
+	border-radius: 6px;
+	padding: 1em;
+	width: 50%;
+	text-align: center;
+}
+#edamam-badge{
+	padding-top: 6em;
+}
