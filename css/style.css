@@ -2,18 +2,19 @@ body{
 	font-family: 'Pontano Sans', sans-serif;
 	text-align: center;
 }
-h1{
+.headerFont{
 	font-family: 'Satisfy', cursive;
-	padding-top: 2em;	
+	padding-top: 1em;	
 	color: white;
 	text-shadow: 2px 2px 2px black;
 	font-size: 3em; 
 }
 
-h3{
-	padding-bottom: 3em;
+h2 {
+	padding-bottom: 2em;
 	color: white;
 	text-shadow: 2px 2px 2px black;
+	text-transform: lowercase;
 }
 
 .headerFonts {
@@ -25,15 +26,17 @@ h3{
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: auto;
-    width: 100%;
+    max-width: 80%;
+    margin: auto;
 
 }
-button {
+.searchButton {
 	background-color: lightgray;
 	padding: 1em;
 	border-radius: 6px;
 	border: none;
 	text-transform: uppercase;
+	margin-bottom: 6em;
 }
 input {
 	border-radius: 6px;
@@ -41,6 +44,18 @@ input {
 	width: 50%;
 	text-align: center;
 }
-#edamam-badge{
-	padding-top: 6em;
+hr{
+	max-width: 70%;
+}
+
+.favoriteHeader{
+	font-family: 'Pontano Sans', sans-serif;
+	display: none;
+}
+
+@media only screen and (max-width: 700px) {
+	.header, hr {
+		max-width: 100%;
+	}
+
 }

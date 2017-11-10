@@ -11,17 +11,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<div class="navigation">
+	<button class="favoriteButton">Favorites</button>
+</div>
 <div class = "header">
-	<h1 class= "headerFonts">from Pantry to Plate</h1>
-	<h3 class = "headerFonts">Recipes for ingredients you already have.</h3>
+	<h1 class= "headerFont">from Pantry to Plate</h1>
+	<h2 class = "headerFonts"> - Recipes for ingredients you already have -</h2>
 </div>
 <div>
 	<form action="#" class="js-search-form">
             <label for="query"></label>
-            <input type="text" placeholder="Example: artickoke, chicken, rice, etc." class="js-query"></input><br><br>
-            <button type="submit">Search Recipes!</button>
+            <input type="text" placeholder="Example: artichoke, chicken, rice, etc." class="js-query"></input><br><br>
+            <button class ='searchButton' type="submit">Search Recipes!</button>
     </form>
+<div class="js-results"></div>
 </div>
+<div class="js-favorites-list">
+<h1 class ="favoriteHeader">Favorites</h1>	
+</div>
+<hr></hr>
 <div id="edamam-badge" data-color="transparent">
 </div>
 </body>
