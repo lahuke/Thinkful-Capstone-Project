@@ -28,7 +28,15 @@ h2 {
 	height: auto;
     max-width: 80%;
     margin: auto;
+    border-top: solid 2em white;
 
+}
+.favoriteButton {
+	float: right;
+	margin-right: 2em;
+	border: none;
+	text-transform: uppercase;
+	background: white;
 }
 .searchButton {
 	background-color: lightgray;
@@ -49,13 +57,21 @@ hr{
 }
 
 .favoriteHeader{
-	font-family: 'Pontano Sans', sans-serif;
+	font-family: 'Satisfy', cursive;
 	display: none;
+	line-height: -1em;
 }
+
 
 @media only screen and (max-width: 700px) {
 	.header, hr {
-		max-width: 100%;
+		max-width: 100%; 
 	}
-
+	.headerFont {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1em;
+	}
+	
 }
