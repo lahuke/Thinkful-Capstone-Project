@@ -38,7 +38,7 @@ h2 {
 	text-transform: uppercase;
 	background: white;
 }
-.searchButton {
+.searchButton, .homeButton {
 	background-color: lightgray;
 	padding: 1em;
 	border-radius: 6px;
@@ -46,6 +46,7 @@ h2 {
 	text-transform: uppercase;
 	margin-bottom: 6em;
 }
+
 input {
 	border-radius: 6px;
 	padding: 1em;
@@ -56,9 +57,11 @@ hr{
 	max-width: 70%;
 }
 
+.favoriteList{
+	display: none;
+}
 .favoriteHeader{
 	font-family: 'Satisfy', cursive;
-	display: none;
 	line-height: -1em;
 }
 
