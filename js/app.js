@@ -38,10 +38,10 @@ function getData (searchTerm, callback) {
 	$.getJSON(edamamURL, query, callback); 
 }
 
-//function renderResults(result){
-//	console.log(result.hits.recipe.label);
-//	$('.js-results').html(result.hits.recipe.label);
-//}
+function renderResults(result){
+	console.log(result.hits.recipe.label);
+	$('.js-results').html(result.hits.recipe.label);
+}
 //function displayData(data){
 //	$('.js-results').html(data);
 //}
@@ -72,7 +72,7 @@ function searchRecipes (){
 		 }
 		 else {
 		 	console.log('You searched ' + ingredient);
-		 	getData(ingredient, hits.recipe.label);
+		 	getData(ingredient, renderResults);
 		 }
 //Clears form after search
 		 $('.js-query').val('');
