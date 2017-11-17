@@ -21,13 +21,14 @@ function backToSearch(){
 backToSearch();
 
 //format for displayed results
-//var resultTemplate = (
-//	'<div>' + '<a class="recipeName" href=""></a>' + 
+var resultTemplate = (
+	'<div>' + '<h1 class="recipeName"></h1>' + 
 //	'<a class=thumbnailLink" href="" target="_blank"><img class="thumbnails" src=""></img></a>' + 
-//	'<button class="addToFavorites">Favorite</button>' + '</div>'
-//);
+//	'<button class="addToFavorites">Favorite</button>' + 
+'</div>'
+);
 
-function getData (searchTerm, callback) {
+function getData (searchTerm) {
 	var query = {
 		q: searchTerm,
 		app_id: '1ceae5b9',
@@ -35,13 +36,19 @@ function getData (searchTerm, callback) {
 		from: 0,
 		to: 1
 	}
-	$.getJSON(edamamURL, query, callback); 
-}
+	$.getJSON(edamamURL, query, function(data){
+		console.log(data)})
+	}; 
+
 
 function renderResults(result){
-	console.log(result.hits.recipe.label);
-	$('.js-results').html(result.hits.recipe.label);
+	var template = $(resultTemplate);
+	template.find(".recipeName").html(result.hits.recipe)
+	console.log('working' + result.hits.recipe);
+	$('.js-results').html(result.hits.recipe);
+	return template;
 }
+
 //function displayData(data){
 //	$('.js-results').html(data);
 //}
