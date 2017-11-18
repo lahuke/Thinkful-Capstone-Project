@@ -1,5 +1,5 @@
 var edamamURL = 'https://api.edamam.com/search';
-var recipePuppyURL = 'http://www.recipepuppy.com/api/'
+//var recipePuppyURL = 'http://www.recipepuppy.com/api/'
 
 //views favorites
 function viewFavorites() {
@@ -46,10 +46,8 @@ function getData (searchTerm, callback) {
 //}
 
 function renderResults(result){
-		$('.js-results').html(result.hits[''].recipe.label);
-		console.log(result.hits[''].recipe.label);
-
-	
+		$('.js-results').html(result.hits[0].recipe.label);
+		console.log(result.hits[0].recipe.label);
 }
 
 //function displayData(data){
