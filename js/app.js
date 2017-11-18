@@ -23,7 +23,12 @@ backToSearch();
 
 //format for displayed results
 var resultTemplate = (
-	'<div>' + '<a class="recipeName" href="" target="_blank"></a>' + 
+	'<div>' + 
+	'<a class="recipeName0" href="" target="_blank"></a>' + 
+	'<a class="recipeName1" href="" target="_blank"></a>' + 
+	'<a class="recipeName2" href="" target="_blank"></a>' + 
+	'<a class="recipeName3" href="" target="_blank"></a>' + 
+	'<a class="recipeName4" href="" target="_blank"></a>' + 
 //	'<a class=thumbnailLink" href="" target="_blank"><img class="thumbnails" src=""></img></a>' + 
 //	'<button class="addToFavorites">Favorite</button>' + 
 '</div>'
@@ -36,7 +41,7 @@ function getData (searchTerm, callback) {
 		app_id: '1ceae5b9',
 		app_key: '7cf93f8ce87c8dd107cc40f76b41b6de',
 		from: 0,
-		to: 2
+		to: 5
 	}
 	$.getJSON(edamamURL, query, callback)
 }
@@ -46,7 +51,7 @@ function getData (searchTerm, callback) {
 //}
 
 function renderResults(result){
-		$('.js-results').html(result.hits[0].recipe.label);
+		$('.js-results').html((result.hits[0].recipe.label) + '<br>' +(result.hits[1].recipe.label));
 		console.log(result.hits[0].recipe.label);
 }
 
