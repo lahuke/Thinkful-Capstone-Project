@@ -1,4 +1,5 @@
 var edamamURL = 'https://api.edamam.com/search';
+var recipePuppyURL = 'http://www.recipepuppy.com/api/'
 
 //views favorites
 function viewFavorites() {
@@ -22,51 +23,42 @@ backToSearch();
 
 //format for displayed results
 var resultTemplate = (
-	'<div>' + '<h1 class="recipeName"></h1>' + 
+	'<div>' + '<a class="recipeName" href="" target="_blank"></a>' + 
 //	'<a class=thumbnailLink" href="" target="_blank"><img class="thumbnails" src=""></img></a>' + 
 //	'<button class="addToFavorites">Favorite</button>' + 
 '</div>'
 );
 
-function getData (searchTerm) {
+function getData (searchTerm, callback) {
 	var query = {
 		q: searchTerm,
+		//p: 1,
 		app_id: '1ceae5b9',
 		app_key: '7cf93f8ce87c8dd107cc40f76b41b6de',
 		from: 0,
-		to: 1
+		to: 2
 	}
-	$.getJSON(edamamURL, query, function(data){
-		console.log(data)})
-	}; 
+	$.getJSON(edamamURL, query, callback)
+}
 
+//function renderResults(data){
+	//console.log(data.results);
+//}
 
 function renderResults(result){
-	var template = $(resultTemplate);
-	template.find(".recipeName").html(result.hits.recipe)
-	console.log('working' + result.hits.recipe);
-	$('.js-results').html(result.hits.recipe);
-	return template;
+		$('.js-results').html(result.hits[''].recipe.label);
+		console.log(result.hits[''].recipe.label);
+
+	
 }
 
 //function displayData(data){
-//	$('.js-results').html(data);
-//}
+	//var food = data.items.map(function (item, index) {
+	//return renderResults(item);
+	//});
+	//$('.js-results').html(food);
+//}	
 
-//function renderResults(result) {
-//	var template = $(resultTemplate);
-//	template.find(".recipeName").html(result.recipe.label).attr('src', result.hits.recipe.url)
-//	template.find(".thumbnailLink").attr('href', result.hits.recipe.url)
-//	template.find(".thumbnails").attr('src', result.hits.recipe.image)
-//	return template;
-//}
-
-//function displayData(data){
-//	var results = data.items.map(function (item,index){
-//		return renderResults(item);
-//	});
-//	$('.js-results').html(results);
-//}
 
 //Search form function. Alerts when no items are entered.
 function searchRecipes (){
