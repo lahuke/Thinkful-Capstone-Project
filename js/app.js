@@ -23,14 +23,15 @@ backToSearch();
 
 //format for displayed results
 var resultTemplate = (
-	'<div>' + 
-	'<a class="recipeName0" href="" target="_blank"></a>' + 
-	'<a class="recipeName1" href="" target="_blank"></a>' + 
-	'<a class="recipeName2" href="" target="_blank"></a>' + 
-	'<a class="recipeName3" href="" target="_blank"></a>' + 
-	'<a class="recipeName4" href="" target="_blank"></a>' + 
+	'<div class="recipeResults">' + '<ul>' +
+	'<li><a class="recipeName0" href="" target="_blank"></a></li>' + 
+	'<li><a class="recipeName1" href="" target="_blank"></a></li>' + 
+	'<li><a class="recipeName2" href="" target="_blank"></a></li>' + 
+	'<li><a class="recipeName3" href="" target="_blank"></a></li>' + 
+	'<li><a class="recipeName4" href="" target="_blank"></a></li>' + 
 //	'<a class=thumbnailLink" href="" target="_blank"><img class="thumbnails" src=""></img></a>' + 
 //	'<button class="addToFavorites">Favorite</button>' + 
+'</ul' +
 '</div>'
 );
 
@@ -46,21 +47,24 @@ function getData (searchTerm, callback) {
 	$.getJSON(edamamURL, query, callback)
 }
 
-//function renderResults(data){
-	//console.log(data.results);
-//}
 
 function renderResults(result){
-		$('.js-results').html((result.hits[0].recipe.label) + '<br>' +(result.hits[1].recipe.label));
-		console.log(result.hits[0].recipe.label);
+	var template = $(resultTemplate);
+		template.find(".recipeName0").html(result.hits[0].recipe.label).attr('href', result.hits[0].recipe.url)
+		template.find(".recipeName1").html(result.hits[1].recipe.label).attr('href', result.hits[0].recipe.url) 
+		template.find(".recipeName2").html(result.hits[2].recipe.label).attr('href', result.hits[0].recipe.url) 
+		template.find(".recipeName3").html(result.hits[3].recipe.label).attr('href', result.hits[0].recipe.url) 
+		template.find(".recipeName4").html(result.hits[4].recipe.label).attr('href', result.hits[0].recipe.url) 
+		$('.js-results').html(template);		
 }
 
 //function displayData(data){
-	//var food = data.items.map(function (item, index) {
-	//return renderResults(item);
-	//});
-	//$('.js-results').html(food);
-//}	
+//	var results = data.item.map(function(item, index){
+//		return renderResults(item);
+//	});
+//	$('.js-results').html(results);
+//}
+
 
 
 //Search form function. Alerts when no items are entered.
