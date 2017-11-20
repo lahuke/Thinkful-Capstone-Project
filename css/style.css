@@ -44,7 +44,7 @@ h2 {
 	border-radius: 6px;
 	border: none;
 	text-transform: uppercase;
-	margin-bottom: 6em;
+	margin-bottom: 2em;
 }
 
 input {
@@ -65,6 +65,27 @@ hr{
 	line-height: -1em;
 }
 
+.recipeResults {
+	padding-bottom: 2em;
+}
+
+a:link{
+	text-decoration: none;
+	color: black;
+	font-weight: bold; 
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
+	font-weight: bold; 
+}
+
+a:hover {
+	text-shadow: 0px 2px lightgray;
+	font-size: 1.2em;
+	transition: 200ms;
+}
 
 @media only screen and (max-width: 700px) {
 	.header, hr {

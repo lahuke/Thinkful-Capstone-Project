@@ -21,16 +21,31 @@ function backToSearch(){
 }
 backToSearch();
 
+function addToFavoriteList(){
+	$('.addToFavorites').click(function(event){
+		console.log("you tried to favorite a recipe");
+	});	
+	addToFavoriteList();
+}
+
 //format for displayed results
 var resultTemplate = (
 	'<div class="recipeResults">' + '<ul>' +
-	'<li><a class="recipeName0" href="" target="_blank"></a></li>' + 
-	'<li><a class="recipeName1" href="" target="_blank"></a></li>' + 
-	'<li><a class="recipeName2" href="" target="_blank"></a></li>' + 
-	'<li><a class="recipeName3" href="" target="_blank"></a></li>' + 
-	'<li><a class="recipeName4" href="" target="_blank"></a></li>' + 
-//	'<a class=thumbnailLink" href="" target="_blank"><img class="thumbnails" src=""></img></a>' + 
-//	'<button class="addToFavorites">Favorite</button>' + 
+	'<a class="recipeName0" href="" target="_blank"></a>' + '<br>' + 
+	'<a class="thumbnailLink0" href="" target="_blank"><img class="thumbnail0" src=""></img></a>' + '<br>' + 
+	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' +
+	'<a class="recipeName1" href="" target="_blank"></a>' + '<br>' +
+	'<a class="thumbnailLink1" href="" target="_blank"><img class="thumbnail1" src=""></img></a>' + '<br>' + 
+	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' +
+	'<a class="recipeName2" href="" target="_blank"></a>' + '<br>' +
+	'<a class="thumbnailLink2" href="" target="_blank"><img class="thumbnail2" src=""></img></a>' + '<br>' + 
+	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' +
+	'<a class="recipeName3" href="" target="_blank"></a>' + '<br>' +
+	'<a class="thumbnailLink3" href="" target="_blank"><img class="thumbnail3" src=""></img></a>' + '<br>' + 
+	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' +
+	'<a class="recipeName4" href="" target="_blank"></a>' + '<br>' +
+	'<a class="thumbnailLink4" href="" target="_blank"><img class="thumbnail4" src=""></img></a>' + '<br>' + 
+	'<button class="addToFavorites">Add to Favorites</button>' +
 '</ul' +
 '</div>'
 );
@@ -51,21 +66,22 @@ function getData (searchTerm, callback) {
 function renderResults(result){
 	var template = $(resultTemplate);
 		template.find(".recipeName0").html(result.hits[0].recipe.label).attr('href', result.hits[0].recipe.url)
-		template.find(".recipeName1").html(result.hits[1].recipe.label).attr('href', result.hits[0].recipe.url) 
-		template.find(".recipeName2").html(result.hits[2].recipe.label).attr('href', result.hits[0].recipe.url) 
-		template.find(".recipeName3").html(result.hits[3].recipe.label).attr('href', result.hits[0].recipe.url) 
-		template.find(".recipeName4").html(result.hits[4].recipe.label).attr('href', result.hits[0].recipe.url) 
+		template.find(".recipeName1").html(result.hits[1].recipe.label).attr('href', result.hits[1].recipe.url) 
+		template.find(".recipeName2").html(result.hits[2].recipe.label).attr('href', result.hits[2].recipe.url) 
+		template.find(".recipeName3").html(result.hits[3].recipe.label).attr('href', result.hits[3].recipe.url) 
+		template.find(".recipeName4").html(result.hits[4].recipe.label).attr('href', result.hits[4].recipe.url)
+		template.find(".thumbnailLink0").attr('href', result.hits[0].recipe.url)
+		template.find(".thumbnail0").attr('src', result.hits[0].recipe.image)
+		template.find(".thumbnailLink1").attr('href', result.hits[1].recipe.url)
+		template.find(".thumbnail1").attr('src', result.hits[1].recipe.image)  
+		template.find(".thumbnailLink2").attr('href', result.hits[2].recipe.url)
+		template.find(".thumbnail2").attr('src', result.hits[2].recipe.image) 
+		template.find(".thumbnailLink3").attr('href', result.hits[3].recipe.url)
+		template.find(".thumbnail3").attr('src', result.hits[3].recipe.image) 
+		template.find(".thumbnailLink4").attr('href', result.hits[4].recipe.url)
+		template.find(".thumbnail4").attr('src', result.hits[4].recipe.image) 
 		$('.js-results').html(template);		
 }
-
-//function displayData(data){
-//	var results = data.item.map(function(item, index){
-//		return renderResults(item);
-//	});
-//	$('.js-results').html(results);
-//}
-
-
 
 //Search form function. Alerts when no items are entered.
 function searchRecipes (){
@@ -85,11 +101,3 @@ function searchRecipes (){
 	});
 }
 searchRecipes();
-
-
-
-
-
-
-//TO DO
-//Add to favorites 
