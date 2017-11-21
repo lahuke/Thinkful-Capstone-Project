@@ -21,31 +21,31 @@ function backToSearch(){
 }
 backToSearch();
 
-function addToFavoriteList(){
-	$('.addToFavorites').click(function(event){
+function addToFavoritesList(){
+$('.js-results').on('click', 'button', function (event){
+	$('.js-favorite-list').append('<a>','<img>');
 		console.log("you tried to favorite a recipe");
-	});	
-	addToFavoriteList();
-}
+})
+};
 
 //format for displayed results
 var resultTemplate = (
-	'<div class="recipeResults">' + '<ul>' +
-	'<a class="recipeName0" href="" target="_blank"></a>' + '<br>' + 
+	'<div class="recipeResults">' + '<ul class = recipeList>' +
+	'<li>' + '<a class="recipeName0" href="" target="_blank"></a>' + '<br>' + 
 	'<a class="thumbnailLink0" href="" target="_blank"><img class="thumbnail0" src=""></img></a>' + '<br>' + 
-	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' +
-	'<a class="recipeName1" href="" target="_blank"></a>' + '<br>' +
+	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' + '</li>' +
+	'<li>' + '<a class="recipeName1" href="" target="_blank"></a>' + '<br>' +
 	'<a class="thumbnailLink1" href="" target="_blank"><img class="thumbnail1" src=""></img></a>' + '<br>' + 
-	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' +
-	'<a class="recipeName2" href="" target="_blank"></a>' + '<br>' +
+	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' + '</li>' +
+	'<li>' + '<a class="recipeName2" href="" target="_blank"></a>' + '<br>' +
 	'<a class="thumbnailLink2" href="" target="_blank"><img class="thumbnail2" src=""></img></a>' + '<br>' + 
-	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' +
-	'<a class="recipeName3" href="" target="_blank"></a>' + '<br>' +
+	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' + '</li>' +
+	'<li>' + '<a class="recipeName3" href="" target="_blank"></a>' + '<br>' +
 	'<a class="thumbnailLink3" href="" target="_blank"><img class="thumbnail3" src=""></img></a>' + '<br>' + 
-	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' +
-	'<a class="recipeName4" href="" target="_blank"></a>' + '<br>' +
+	'<button class="addToFavorites">Add to Favorites</button>' + '<br><br>' + '</li>' +
+	'<li>' + '<a class="recipeName4" href="" target="_blank"></a>' + '<br>' +
 	'<a class="thumbnailLink4" href="" target="_blank"><img class="thumbnail4" src=""></img></a>' + '<br>' + 
-	'<button class="addToFavorites">Add to Favorites</button>' +
+	'<button class="addToFavorites">Add to Favorites</button>' + '</li>' +
 '</ul' +
 '</div>'
 );
@@ -53,7 +53,6 @@ var resultTemplate = (
 function getData (searchTerm, callback) {
 	var query = {
 		q: searchTerm,
-		//p: 1,
 		app_id: '1ceae5b9',
 		app_key: '7cf93f8ce87c8dd107cc40f76b41b6de',
 		from: 0,
@@ -80,7 +79,8 @@ function renderResults(result){
 		template.find(".thumbnail3").attr('src', result.hits[3].recipe.image) 
 		template.find(".thumbnailLink4").attr('href', result.hits[4].recipe.url)
 		template.find(".thumbnail4").attr('src', result.hits[4].recipe.image) 
-		$('.js-results').html(template);		
+		$('.js-results').html(template);	
+	
 }
 
 //Search form function. Alerts when no items are entered.
@@ -101,3 +101,11 @@ function searchRecipes (){
 	});
 }
 searchRecipes();
+addToFavoritesList();
+
+
+
+
+
+
+
