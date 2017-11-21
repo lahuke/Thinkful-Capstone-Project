@@ -69,6 +69,10 @@ hr{
 	padding-bottom: 7em;
 }
 
+li {
+	list-style: none;
+}
+
 .recipeList {
 	list-style: none;
 }

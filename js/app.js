@@ -21,10 +21,11 @@ function backToSearch(){
 }
 backToSearch();
 
+
 function addToFavoritesList(){
 $('.js-results').on('click', 'button', function (event){
-	$('.js-favorite-list').append('<a>','<img>');
-		console.log("you tried to favorite a recipe");
+	$(this).closest('li').clone().appendTo('.js-favorite-list')
+		console.log("You favorited a recipe!");
 })
 };
 
