@@ -47,6 +47,10 @@ h2 {
 	margin-bottom: 2em;
 }
 
+.selectedButton {
+	background-color: #20B2AA;
+}
+
 input {
 	border-radius: 6px;
 	padding: 1em;

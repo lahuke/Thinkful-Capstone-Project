@@ -24,10 +24,20 @@ backToSearch();
 
 function addToFavoritesList(){
 $('.js-results').on('click', 'button', function (event){
-	$(this).closest('li').clone().appendTo('.js-favorite-list')
+	$(this).html("Remove from Favorites")
+	$(this).closest('li').clone().appendTo('.favoriteSaved')
+	$(this).css('background-color', '#20B2AA').html("Added to Favorites")
 		console.log("You favorited a recipe!");
 })
 };
+
+function removeFromFavoritesList(){
+	$('.js-favorite-list').on('click', 'button', function(event){
+		$(this).closest('li').hide();
+		console.log("Recipe removed from Favorites");
+	})
+};
+removeFromFavoritesList();
 
 //format for displayed results
 var resultTemplate = (
